@@ -5,7 +5,7 @@ A CLI tool for scaffolding Vue TypeScript projects based on the [vue-dialog](htt
 ## Installation
 
 ```bash
-npm install -g xx-cli
+npm install -g @bestwu/xx-cli
 ```
 
 ## Usage
