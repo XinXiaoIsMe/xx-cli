@@ -1,5 +1,5 @@
 {
-  "name": "xx-cli",
+  "name": "@bestwu/xx-cli",
   "version": "1.0.0",
   "description": "CLI tool for scaffolding Vue TypeScript projects",
   "main": "dist/index.js",
