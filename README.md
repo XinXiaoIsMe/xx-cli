@@ -1,6 +1,6 @@
 # XX-CLI
 
-A CLI tool for scaffolding Vue TypeScript projects based on the [vue-dialog](https://github.com/XinXiaoIsMe/vue-ts) template.
+A versatile CLI tool for scaffolding projects from various templates. Support for Vue TypeScript projects and TypeScript library development, with an extensible architecture for future templates.
 
 ## Installation
 
@@ -10,25 +10,57 @@ npm install -g @bestwu/xx-cli
 
 ## Usage
 
-Create a new Vue TypeScript project:
+### Create a new project
 
-```bash
-xx-cli create my-project
-```
-
-Or run it without arguments to get an interactive prompt:
-
+Interactive mode (recommended):
 ```bash
 xx-cli create
 ```
 
+Create a project with specific name:
+```bash
+xx-cli create my-project
+```
+
+Create a project with specific template:
+```bash
+xx-cli create my-project --template vue-ts
+xx-cli create my-lib --template lib-ts
+```
+
+### List available templates
+
+```bash
+xx-cli list
+```
+
+## Available Templates
+
+### `vue-ts`
+- **Description**: Vue TypeScript project template for daily development
+- **Repository**: https://github.com/xx-template/vue-ts.git
+- **Use case**: Web applications, SPAs, Vue projects
+
+### `lib-ts`
+- **Description**: TypeScript library template for package development
+- **Repository**: https://github.com/xx-template/lib-ts.git
+- **Use case**: NPM packages, TypeScript libraries, reusable components
+
 ## Features
 
-- Creates a new Vue TypeScript project using the vue-dialog template
-- Interactive project name input
-- Automatic package.json updates
-- Clean git history removal
-- Helpful next steps instructions
+- 🎯 **Template Selection**: Choose from multiple project templates
+- 🚀 **Interactive CLI**: User-friendly prompts for template and project name selection
+- 📦 **Automatic Setup**: Package.json updates and clean git history
+- 🔧 **Command Line Options**: Direct template specification for automation
+- 📋 **Template Listing**: View all available templates and their descriptions
+- 🎨 **Extensible**: Easy to add new templates in the future
+
+## CLI Commands
+
+| Command | Description | Options |
+|---------|-------------|---------|
+| `create [project-name]` | Create a new project | `-t, --template <template>` |
+| `list` | List all available templates | - |
 
 ## Development
 
@@ -45,6 +77,22 @@ xx-cli create
    ```bash
    npm link
    ```
+
+## Adding New Templates
+
+To add a new template, update the `templates` array in `src/index.ts`:
+
+```typescript
+{
+  name: 'template-name',
+  description: 'Template description',
+  repository: 'https://github.com/xx-template/template-repo.git',
+  postCloneInstructions: [
+    'npm install',
+    'npm run start'
+  ]
+}
+```
 
 ## License
 
